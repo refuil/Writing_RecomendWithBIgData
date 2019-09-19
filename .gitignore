@@ -1,2 +1,10 @@
 *.class
 *.log
+.classpath
+.project
+.settings
+.cache
+target
+*.iml
+.idea
+venv
