@@ -5,7 +5,7 @@ public class Main{
 
 
     public static void main(String[] args) {
-//        check_bst();
+        check_bst();
 
 //        check_stack_queue();
 //        checkQueue();
@@ -24,7 +24,7 @@ public class Main{
 
         int[] nums = {1,2,1,4,4,5,6,7};
         int k = 3;
-        printList(topKFrequent(nums, k));
+//        printList(topKFrequent(nums, k));
 
         checkSegmentTree();
 
@@ -251,14 +251,14 @@ public class Main{
         }
     }
 
-    private static List<Integer> topKFrequent(int[] nums, int k){
-        TreeMap<Integer, Integer> map = new TreeMap<>();
-        for(int num: nums){
-            if(map.containsKey(num))
-                map.put(num, map.get(num) + 1);
-            else
-                map.put(num, 1);
-        }
+//    private static List<Integer> topKFrequent(int[] nums, int k){
+//        TreeMap<Integer, Integer> map = new TreeMap<>();
+//        for(int num: nums){
+//            if(map.containsKey(num))
+//                map.put(num, map.get(num) + 1);
+//            else
+//                map.put(num, 1);
+//        }
 
 //        MaxHeap<Freq> maxHeap = new MaxHeap<>();
 //        for(int key: map.keySet()){
@@ -272,22 +272,22 @@ public class Main{
 //            res.add(maxHeap.extractMax().e);
 //        return res;
 
-        PriorityQueue<Freq> pq = new PriorityQueue<>();
-        for(int key: map.keySet()){
-            if(pq.getSize() < k)
-                pq.enqueue(new Freq(key, map.get(key)));
-            else if(map.get(key) > pq.getFront().freq){
-                pq.dequeue();
-                pq.enqueue(new Freq(key, map.get(key)));
-            }
-        }
-        LinkedList<Integer> res = new LinkedList<>();
-        while(!pq.isEmpty()){
-            res.add(pq.dequeue().e);
-        }
-        return res;
+//        PriorityQueue<Freq> pq = new PriorityQueue<>();
+//        for(int key: map.keySet()){
+//            if(pq.getSize() < k)
+//                pq.enqueue(new Freq(key, map.get(key)));
+//            else if(map.get(key) > pq.getFront().freq){
+//                pq.dequeue();
+//                pq.enqueue(new Freq(key, map.get(key)));
+//            }
+//        }
+//        LinkedList<Integer> res = new LinkedList<>();
+//        while(!pq.isEmpty()){
+//            res.add(pq.dequeue().e);
+//        }
+//        return res;
 
-    }
+//    }
 
     private static void printList(List<Integer> nums){
         for(Integer num: nums)
